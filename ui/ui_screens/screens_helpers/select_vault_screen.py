@@ -1,7 +1,3 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPainter, QPen, QBrush
-
-from ui.ui_files.main_ui import Ui_HomeWindow
 from PyQt5.QtWidgets import QListWidgetItem, QStyledItemDelegate, QWidget, QListWidget
 from PyQt5 import QtWidgets
 from backend.functionality.vault import Vault

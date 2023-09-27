@@ -1,6 +1,4 @@
 import string
-
-from backend.functionality.vault import Vault
 import random
 from PyQt5 import QtWidgets
 

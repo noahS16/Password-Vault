@@ -1,6 +1,5 @@
 import pyperclip
 from PyQt5.QtWidgets import QMessageBox
-
 from backend.functionality.vault import Vault
 from PyQt5 import QtWidgets
 

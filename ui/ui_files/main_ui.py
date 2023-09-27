@@ -358,24 +358,13 @@ class Ui_HomeWindow(object):
         self.pw_length_edit = QtWidgets.QSpinBox(self.groupBox1)
         self.pw_length_edit.setMaximumSize(QtCore.QSize(50, 16777215))
         self.pw_length_edit.setInputMethodHints(QtCore.Qt.ImhDigitsOnly|QtCore.Qt.ImhHiddenText|QtCore.Qt.ImhPreferNumbers)
-        self.pw_length_edit.setMinimum(5)
+        self.pw_length_edit.setMinimum(8)
         self.pw_length_edit.setProperty("value", 10)
         self.pw_length_edit.setObjectName("pw_length_edit")
         self.horizontalLayout_3.addWidget(self.pw_length_edit, 0, QtCore.Qt.AlignLeft)
         spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem11)
         self.gridLayout_7.addLayout(self.horizontalLayout_3, 0, 0, 1, 1)
-        self.generate_pw_bttn = QtWidgets.QPushButton(self.groupBox1)
-        self.generate_pw_bttn.setMaximumSize(QtCore.QSize(80, 16777215))
-        self.generate_pw_bttn.setStyleSheet("QPushButton{\n"
-"width: 500px;\n"
-"height: 50px;\n"
-"border-radius: 10px;\n"
-"background-color: rgb(255, 254, 254);\n"
-"color: rgb(69, 25, 255);\n"
-"}")
-        self.generate_pw_bttn.setObjectName("generate_pw_bttn")
-        self.gridLayout_7.addWidget(self.generate_pw_bttn, 0, 6, 1, 1)
         self.options_group_box = QtWidgets.QGroupBox(self.groupBox1)
         self.options_group_box.setObjectName("options_group_box")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.options_group_box)
@@ -392,6 +381,17 @@ class Ui_HomeWindow(object):
         self.uppercase_chkbox.setObjectName("uppercase_chkbox")
         self.horizontalLayout_2.addWidget(self.uppercase_chkbox)
         self.gridLayout_7.addWidget(self.options_group_box, 0, 4, 1, 2)
+        self.generate_pw_bttn = QtWidgets.QPushButton(self.groupBox1)
+        self.generate_pw_bttn.setMaximumSize(QtCore.QSize(80, 16777215))
+        self.generate_pw_bttn.setStyleSheet("QPushButton{\n"
+"width: 500px;\n"
+"height: 50px;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 254, 254);\n"
+"color: rgb(69, 25, 255);\n"
+"}")
+        self.generate_pw_bttn.setObjectName("generate_pw_bttn")
+        self.gridLayout_7.addWidget(self.generate_pw_bttn, 0, 6, 1, 1)
         self.gridLayout_2.addWidget(self.groupBox1, 2, 0, 1, 1)
         self.tabWidget.addTab(self.addTab, "")
         self.viewTab = QtWidgets.QWidget()
@@ -406,13 +406,15 @@ class Ui_HomeWindow(object):
         self.current_acct_label = QtWidgets.QLabel(self.groupBox_2)
         self.current_acct_label.setObjectName("current_acct_label")
         self.verticalLayout_2.addWidget(self.current_acct_label, 0, QtCore.Qt.AlignHCenter)
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
+        self.horizontalGroupBox = QtWidgets.QGroupBox(self.groupBox_2)
+        self.horizontalGroupBox.setObjectName("horizontalGroupBox")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.horizontalGroupBox)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.show_email_edit = QtWidgets.QLineEdit(self.groupBox_2)
+        self.show_email_edit = QtWidgets.QLineEdit(self.horizontalGroupBox)
         self.show_email_edit.setEnabled(False)
         self.show_email_edit.setObjectName("show_email_edit")
         self.horizontalLayout_9.addWidget(self.show_email_edit)
-        self.copy_email_bttn = QtWidgets.QPushButton(self.groupBox_2)
+        self.copy_email_bttn = QtWidgets.QPushButton(self.horizontalGroupBox)
         self.copy_email_bttn.setStyleSheet("QPushButton{\n"
 "width: 35px;\n"
 "height: 35px;\n"
@@ -422,14 +424,16 @@ class Ui_HomeWindow(object):
 "}")
         self.copy_email_bttn.setObjectName("copy_email_bttn")
         self.horizontalLayout_9.addWidget(self.copy_email_bttn)
-        self.verticalLayout_2.addLayout(self.horizontalLayout_9)
-        self.horizontalLayout_10 = QtWidgets.QHBoxLayout()
+        self.verticalLayout_2.addWidget(self.horizontalGroupBox)
+        self.horizontalGroupBox_2 = QtWidgets.QGroupBox(self.groupBox_2)
+        self.horizontalGroupBox_2.setObjectName("horizontalGroupBox_2")
+        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.horizontalGroupBox_2)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        self.show_pw_edit = QtWidgets.QLineEdit(self.groupBox_2)
+        self.show_pw_edit = QtWidgets.QLineEdit(self.horizontalGroupBox_2)
         self.show_pw_edit.setEnabled(False)
         self.show_pw_edit.setObjectName("show_pw_edit")
         self.horizontalLayout_10.addWidget(self.show_pw_edit)
-        self.copy_pw_bttn = QtWidgets.QPushButton(self.groupBox_2)
+        self.copy_pw_bttn = QtWidgets.QPushButton(self.horizontalGroupBox_2)
         self.copy_pw_bttn.setStyleSheet("QPushButton{\n"
 "width: 35px;\n"
 "height: 35px;\n"
@@ -439,7 +443,7 @@ class Ui_HomeWindow(object):
 "}")
         self.copy_pw_bttn.setObjectName("copy_pw_bttn")
         self.horizontalLayout_10.addWidget(self.copy_pw_bttn)
-        self.verticalLayout_2.addLayout(self.horizontalLayout_10)
+        self.verticalLayout_2.addWidget(self.horizontalGroupBox_2)
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.delete_acct_bttn = QtWidgets.QPushButton(self.groupBox_2)
@@ -536,13 +540,15 @@ class Ui_HomeWindow(object):
         self.add_acct_bttn.setText(_translate("HomeWindow", "Add Account"))
         self.groupBox1.setTitle(_translate("HomeWindow", "Password Options (Or type below for custom password)"))
         self.label_3.setText(_translate("HomeWindow", "Length:"))
-        self.generate_pw_bttn.setText(_translate("HomeWindow", "Generate"))
         self.numbers_chkbox.setText(_translate("HomeWindow", "Numbers"))
         self.special_char_chkbox.setText(_translate("HomeWindow", "Special Characters"))
         self.uppercase_chkbox.setText(_translate("HomeWindow", "Uppercase"))
+        self.generate_pw_bttn.setText(_translate("HomeWindow", "Generate"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.addTab), _translate("HomeWindow", "Add"))
         self.current_acct_label.setText(_translate("HomeWindow", "Website"))
+        self.horizontalGroupBox.setTitle(_translate("HomeWindow", "Email"))
         self.copy_email_bttn.setText(_translate("HomeWindow", "Copy"))
+        self.horizontalGroupBox_2.setTitle(_translate("HomeWindow", "Password"))
         self.copy_pw_bttn.setText(_translate("HomeWindow", "Copy"))
         self.delete_acct_bttn.setText(_translate("HomeWindow", "Delete"))
         self.edit_acct_bttn.setText(_translate("HomeWindow", "Edit"))

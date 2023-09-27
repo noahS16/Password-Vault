@@ -1,7 +1,5 @@
-import random
 from .key import Crypto
 from backend.db import db
-import pyperclip
 
 
 class Vault:

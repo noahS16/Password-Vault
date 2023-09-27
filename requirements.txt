@@ -1,0 +1,3 @@
+cryptography
+pyperclip
+pyqt5-tools
